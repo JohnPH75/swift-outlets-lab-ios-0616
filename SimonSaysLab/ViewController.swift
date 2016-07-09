@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -18,6 +20,58 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        winLabel.hidden = true
+        
+        
+    }
+    
+    @IBAction func redButton(sender: AnyObject) {
+        
+        simonSaysGame.guessRed()
+        print("Red Tapped")
+        
+        patternToMatch()
+    }
+    
+    @IBAction func greenButton(sender: AnyObject) {
+        
+        simonSaysGame.guessGreen()
+        print("Green Tapped")
+        
+        patternToMatch()
+    }
+    
+    @IBAction func yellowButton(sender: AnyObject) {
+        
+        simonSaysGame.guessYellow()
+        print("Yellow Tapped")
+        
+        patternToMatch()
+    }
+    
+    @IBAction func blueButton(sender: AnyObject) {
+        
+        simonSaysGame.guessBlue()
+        print("Blue Tapped")
+        
+        patternToMatch()
+    }
+    
+    func updateWinLabel() {
+        winLabel.hidden = false
+        if simonSaysGame.wonGame() {
+            winLabel.text = "You won!"
+        }
+        else {
+            winLabel.text = "You lost!"
+        }
+    }
+    
+    func patternToMatch() {
+        if simonSaysGame.chosenColors.count == simonSaysGame.patternToMatch.count {
+            updateWinLabel()
+        }
     }
 }
 
@@ -31,6 +85,7 @@ extension ViewController {
         
         displayTheColors()
     }
+    
     
     private func displayTheColors() {
         self.view.userInteractionEnabled = false

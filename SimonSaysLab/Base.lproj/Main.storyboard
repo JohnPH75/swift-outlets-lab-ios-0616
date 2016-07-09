@@ -1,41 +1,84 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimonSaysLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9HG-tg-ruo"/>
+                        <viewControllerLayoutGuide type="bottom" id="oSo-AN-O5V"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="1sc-un-zst">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sc-un-zst">
                                 <rect key="frame" x="95" y="175" width="130" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EAQ-y2-rTz">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-y2-rTz">
                                 <rect key="frame" x="110" y="313" width="101" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start Game"/>
                                 <connections>
                                     <action selector="startGameTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yBr-vr-xXA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playing…" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rmB-RF-5aE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Playing…" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmB-RF-5aE">
                                 <rect key="frame" x="20" y="372" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74W-et-K7K">
+                                <rect key="frame" x="20" y="20" width="99" height="99"/>
+                                <color key="backgroundColor" red="0.95519060860000005" green="0.26849861219999999" blue="0.26708105510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="redButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yhg-qf-cIW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8b-Xf-ysx">
+                                <rect key="frame" x="25" y="449" width="99" height="99"/>
+                                <color key="backgroundColor" red="1" green="0.95866600469999996" blue="0.02039561279" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="yellowButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXk-gH-2z5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcY-kk-2n5">
+                                <rect key="frame" x="201" y="20" width="99" height="99"/>
+                                <color key="backgroundColor" red="0.001547405381" green="0.95519060860000005" blue="0.1774917862" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="greenButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kr9-p3-e1I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbp-Bq-mfO">
+                                <rect key="frame" x="201" y="449" width="99" height="99"/>
+                                <color key="backgroundColor" red="0.02071465171" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="blueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cps-Pn-pWg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N8b-Xf-ysx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="0xq-4n-tbc"/>
+                            <constraint firstItem="74W-et-K7K" firstAttribute="top" secondItem="9HG-tg-ruo" secondAttribute="bottom" constant="20" id="7yT-bc-rh8"/>
+                            <constraint firstItem="rmB-RF-5aE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Co6-wB-ksE"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="74W-et-K7K" secondAttribute="leading" id="Gsi-Aq-kPM"/>
+                            <constraint firstItem="EAQ-y2-rTz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JZC-Ar-VeL"/>
+                            <constraint firstItem="oSo-AN-O5V" firstAttribute="top" secondItem="Zbp-Bq-mfO" secondAttribute="bottom" constant="20" id="LDR-Ym-cQ2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fcY-kk-2n5" secondAttribute="trailing" id="VhA-9d-Cg3"/>
+                            <constraint firstItem="1sc-un-zst" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YgZ-hS-se0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zbp-Bq-mfO" secondAttribute="trailing" id="e5g-3K-Xrj"/>
+                            <constraint firstItem="fcY-kk-2n5" firstAttribute="top" secondItem="9HG-tg-ruo" secondAttribute="bottom" constant="20" id="evQ-bf-ouc"/>
+                            <constraint firstItem="oSo-AN-O5V" firstAttribute="top" secondItem="N8b-Xf-ysx" secondAttribute="bottom" constant="20" id="rlX-fm-Bpt"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="displayColorView" destination="1sc-un-zst" id="fls-Zq-7g0"/>
